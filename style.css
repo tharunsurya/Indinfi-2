@@ -1,0 +1,220 @@
+/* General Reset for Body */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Ensure padding/borders do not cause overflow */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling on small screens */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    background-color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    /* Keep logo and navbar items apart */
+    align-items: center;
+    /* Vertically center items */
+    width: 100%;
+}
+
+/* Navbar - Center the items for mobile devices */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    /* Space items evenly on large screens */
+    width: 100%;
+    list-style: none;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+/* Ensure Hero Section and other content doesn't get hidden under the navbar */
+.hero-section {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    margin-top: 70px;
+    /* Adjust to prevent content being hidden */
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+    /* Center the text horizontally */
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 2.5vw;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Hero Image */
+.hero-image {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.hero-image.show-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Search Input & Button */
+.search-input {
+    max-width: 25rem;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 8px 15px;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-input:focus {
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.search-btn {
+    border-radius: 50px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+    /* Hide the prev/next buttons */
+}
+.carousel-item {
+    transition: transform 0.2s ease-in-out !important;
+    /* Faster sliding effect */
+}
+/* Media Queries for Mobile and Small Devices */
+
+/* For Small Screens (Phones & Portrait Mode) */
+@media (max-width: 576px) {
+    body {
+        padding-top: 0;
+    }
+
+    /* Centering navbar items in mobile */
+    .navbar-nav {
+        flex-direction: column;
+        /* Stack navbar items vertically */
+        justify-content: center;
+        align-items: center;
+        /* Center items vertically */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 5px 0;
+        /* Adjust spacing for mobile */
+        text-align: center;
+        font-size: 14px;
+        /* Smaller font for mobile */
+    }
+
+    /* Adjust the hero section */
+    .hero-section {
+        margin-top: 60px;
+        /* Add a little gap for the navbar */
+        padding: 0 5%;
+    }
+
+    .hero-title {
+        font-size: 8vw;
+        /* Scale down text for smaller screens */
+    }
+
+    .hero-subtitle {
+        font-size: 4vw;
+        /* Scale down text for smaller screens */
+    }
+
+    .search-input {
+        max-width: 16rem;
+        /* Make the search input smaller */
+    }
+
+    .navbar {
+        padding: 8px 10px;
+        /* Adjust padding for the navbar on mobile */
+        justify-content: center;
+        /* Center the navbar */
+    }
+}
+
+/* For Medium Screens (Small Tablets and Large Phones) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .hero-title {
+        font-size: 6vw;
+    }
+
+    .hero-subtitle {
+        font-size: 3.5vw;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        /* Align navbar items horizontally for medium screens */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 15px;
+        font-size: 16px;
+        /* Slightly larger font on tablets */
+    }
+}
+
+/* For Larger Screens (Desktops and Large Devices) */
+@media (min-width: 1200px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+}
